@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Manojgit45/Devops-project.git'
+                git 'https://github.com/Manojgit45/Devops-Repo.git'
             }
         }
         stage('Build Docker Image') {
