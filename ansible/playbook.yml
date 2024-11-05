@@ -1,0 +1,16 @@
+- hosts: all
+  tasks:
+    - name: Pull Docker image
+      docker_image:
+        name: "{{ docker_image }}"
+        tag: latest
+        state: present
+
+    - name: Run Docker container
+      docker_container:
+        name: my-app
+        image: "{{ docker_image }}"
+        state: started
+        ports:
+          - "5000:5000"
+
